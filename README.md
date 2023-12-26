@@ -1,6 +1,8 @@
 # LSP---retorna-escala-de-trabalho
 Função que retorna escala de trabalho de acordo com o teto informado no parâmetro de entrada.
 
+* Note que as estruturas objColaborador e objParametrosEntrada já devem estar devidamente preenchidos antes de executar a função.
+
 ## Função
 
 ```
