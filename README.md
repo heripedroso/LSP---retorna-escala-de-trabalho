@@ -19,8 +19,7 @@ Funcao retornaEscalaDeTrabalho(Numero nTeto);
      cEscala.SQL "Select r006esc.nomesc From r038hes, r006esc  \
        where r038hes.codesc = r006esc.codesc and r038hes.numcad = :nNumCad and r038hes.TipCol = :nTipCol and r038hes.NumEmp = :nNumemp \ 
        And r038hes.datalt = (Select max(Tab2.DatAlt) From r038hes Tab2 Where Tab2.NumEmp = :nNumemp And Tab2.NumCad = :nNumCad And Tab2.TipCol = :nTipCol \
-                             And not (tab2.DatAlt > :dDataRef)) \  
-       And not (r038hes.DatAlt > :dDataRef)";  
+                             And (tab2.DatAlt <= :dDataRef))";        
      cEscala.AbrirCursor();
      Se (cEscala.Achou) {  
        objColaborador[nTeto].aEscala = cEscala.NomEsc; 
